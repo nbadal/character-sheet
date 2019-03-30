@@ -1,6 +1,11 @@
 language: android
 
+# default tools/target is 25, use 28 instead:
 android:
   components:
   - build-tools-28.0.3
   - android-28
+
+# default command is 'build connectedCheck', but we don't need instrumentation at the moment:
+script:
+- ./gradlew build check
