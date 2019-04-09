@@ -1,4 +1,17 @@
 apply plugin: 'com.android.application'
+apply plugin: 'jacoco-android'
+
+jacoco {
+    toolVersion = "0.8.3"
+}
+
+jacocoAndroidUnitTestReport {
+    excludes += [
+            '**/CharacterSheetApp.class',
+            '**/ui/**/*',
+            '**/inject/**/*',
+    ]
+}
 
 android {
     compileSdkVersion 28
@@ -23,7 +36,7 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.1.0-alpha03'
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha04'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
 
